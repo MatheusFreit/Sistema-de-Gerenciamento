@@ -1,0 +1,71 @@
+<mat-card>
+<div class="funcionario-box">
+    <button routerLink="cadastrar" mat-raised-button color="primary" style="width: 510px; left: -7px;"   >Cadastrar novo Funcionario</button>
+    
+    <div class="input-box" >
+        <mat-form-field  style="width: 510px;"  class="example-full-width">
+        <mat-label>Procurar: </mat-label>
+        <input matInput #message maxlength="25" (input)="search($event)"
+        placeholder="Qual registro esta buscando?">
+        </mat-form-field>
+    </div>
+
+</div>
+
+<table mat-table [dataSource]="funcionarios" class="mat-elevation-z8">
+
+     <!-- Position Column -->
+    <ng-container matColumnDef="Situacao">
+      <th mat-header-cell *matHeaderCellDef> Situação </th>
+      <td mat-cell *matCellDef="let funcionario"> 
+        <div *ngIf="funcionario.ativo == true ; else inativo">  
+            <img src="../../../assets/imagens/ativo.PNG" alt="ativo" height="35px" width="35px">
+        </div>
+
+        <ng-template #inativo>
+            <img src="../../../assets/imagens/inativo.PNG" alt="inativo" height="35px" width="35px">
+        </ng-template>
+    
+      </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nome">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Sobrenome">
+      <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.sobrenome}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Departamento">
+      <th mat-header-cell *matHeaderCellDef> Departamento </th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.departamento}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ações">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let funcionario"> 
+            <button routerLink="Editar/{{funcionario.id}}"  mat-raised-button color="accent">Editar</button>
+            <button routerLink="Detalhes/{{funcionario.id}}" mat-raised-button href="https://www.google.com/" target="_blank">Detalhes</button>    
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Excluir">
+        <th mat-header-cell *matHeaderCellDef > Excluir </th>
+        <td mat-cell *matCellDef="let funcionario"> 
+             <button mat-raised-button color="warn" mat-raised-button (click)="openDialog(funcionario.id)">excluir</button> 
+            
+        </td>
+      </ng-container>
+
+
+  
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>
+</mat-card>
