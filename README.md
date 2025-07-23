@@ -1,44 +1,60 @@
-# Sistema de Gerenciamento de Funcionários
-Este projeto consiste em um sistema de gerenciamento de funcionários desenvolvido utilizando Angular para o frontend, C# (ASP.NET Core) para o backend e MySQL como banco de dados.
+# 👨‍💼 Sistema de Gerenciamento de Funcionários
 
-## Backend - C# (ASP.NET Core):
+Este projeto é um sistema completo de gerenciamento de funcionários, desenvolvido com uma stack fullstack moderna:
 
-O backend é construído em C# usando o framework ASP.NET Core. Ele oferece uma API RESTful para interação com o frontend. Abaixo estão as principais características do backend:
+- **Frontend:** Angular  
+- **Backend:** C# com ASP.NET Core (API RESTful)  
+- **Banco de Dados:** MySQL
 
-FuncionárioController: Este controlador é responsável por lidar com as operações relacionadas aos funcionários, como criação, leitura, atualização e exclusão (CRUD).
+> 🎯 Ideal para demonstrar domínio de CRUD completo com integração entre front e back.
 
-* GET: Oferece endpoints para recuperar todos os funcionários ou um funcionário específico com base no ID.
-* POST: Permite a criação de um novo funcionário.
-* PUT (InativaFuncionario): Desativa um funcionário com base no ID.
-* PUT: Atualiza as informações de um funcionário existente.
-* DELETE: Exclui um funcionário com base no ID.
+---
+## 🛠️ Tecnologias Utilizadas
 
-FuncionarioModel: Este modelo representa a estrutura de dados de um funcionário, incluindo suas propriedades como nome, cargo, etc.
+![CSharp](https://img.shields.io/badge/-CSharp-0D1117?style=for-the-badge&logo=csharp&labelColor=0D1117)
+![ASP.NET Core](https://img.shields.io/badge/-ASP.NET_Core-0D1117?style=for-the-badge&logo=dotnet&labelColor=0D1117)
+![Angular](https://img.shields.io/badge/-Angular-0D1117?style=for-the-badge&logo=angular&labelColor=0D1117)
+![MySQL](https://img.shields.io/badge/-MySQL-0D1117?style=for-the-badge&logo=mysql&labelColor=0D1117)
 
-IfuncionarioInterface: Define uma interface para o serviço de funcionários, garantindo um contrato para as operações CRUD.
+---
+## 🔧 Backend – C# (ASP.NET Core)
 
-ServiceResponse: Um modelo para encapsular a resposta do serviço, incluindo dados e mensagens.
+O backend é uma API RESTful construída com ASP.NET Core. Ele realiza as operações de CRUD (Create, Read, Update, Delete) dos funcionários através do `FuncionarioController`.
 
-ConnectionStrings: A string de conexão do banco de dados MySQL, definindo o local (127.0.0.1), usuário (root), senha (vazia) e o nome do banco de dados (FuncionarioWebApi).
+### Principais funcionalidades:
 
-## Banco de Dados - MySQL:
+- `GET`: Retorna todos os funcionários ou um funcionário específico por ID.
+- `POST`: Criação de um novo funcionário.
+- `PUT`: Atualiza dados ou desativa funcionário (via `InativaFuncionario`).
+- `DELETE`: Remove um funcionário por ID.
 
-O banco de dados MySQL é utilizado para armazenar as informações dos funcionários. A string de conexão especifica os detalhes para se conectar ao banco.
+### Estrutura:
 
-## Frontend - Angular:
+- **FuncionarioModel**: Representa os dados (nome, cargo, status, etc).
+- **IFuncionarioInterface**: Interface com os métodos esperados no serviço.
+- **ServiceResponse**: Formato padrão das respostas da API.
+- **ConnectionStrings**: Define os parâmetros de conexão com o MySQL (host, user, password, database).
 
-O frontend é construído em Angular, proporcionando uma interface de usuário interativa e amigável. As principais funcionalidades incluem:
+## 🗄️ Banco de Dados – MySQL
 
-* Listagem de Funcionários: Exibe a lista de todos os funcionários.
-* Detalhes do Funcionário: Mostra informações detalhadas de um funcionário específico.
-* Cadastro de Funcionário: Permite adicionar um novo funcionário ao sistema.
-* Edição de Funcionário: Permite modificar as informações de um funcionário existente.
-* Exclusão de Funcionário: Permite remover um funcionário do sistema.
+Utilizado para armazenar todos os dados persistentes dos funcionários.  
 
-O projeto Angular faz solicitações HTTP para os endpoints fornecidos pelo backend em C# para realizar as operações CRUD.
+## 💻 Frontend – Angular
 
-Esse sistema integrado fornece uma solução completa para o gerenciamento eficiente de funcionários, oferecendo uma interface intuitiva para interação com os dados armazenados no banco de dados MySQL.
+O frontend foi desenvolvido em Angular, consumindo a API do backend. A interface é amigável e responsiva.
 
-## Video do projeto 
+### Funcionalidades:
 
-Drive: https://drive.google.com/file/d/15028-Lo7aJkICxMgbRhLiriTb5xu8xxL/view?usp=sharing
+- 📋 **Listagem de Funcionários**  
+- 🔍 **Visualização de detalhes**  
+- ➕ **Cadastro de novo funcionário**  
+- ✏️ **Edição de dados**  
+- 🗑️ **Exclusão ou desativação de funcionário**
+
+## 🎥 Demonstração do Projeto
+
+Você pode visualizar o funcionamento completo neste vídeo:
+
+📎 [Assista no Google Drive](https://drive.google.com/file/d/15028-Lo7aJkICxMgbRhLiriTb5xu8xxL/view?usp=sharing)
+
+
